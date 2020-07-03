@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
+}
+
+.container {
+    padding: 100px 50px
+}
+
+.mt20 {
+    margin-top: 20px
+}
+
+.ml30 {
+    margin-left: 30px
+}
+
+.ml20 {
+    margin-left: 20px
+}
+
+.mb10 {
+    margin-bottom: 10px
+}
+
+.mb20 {
+    margin-bottom: 20px
+}
+
+.row-bar {
+    height: 20px
+}
+
+.vm {
+    display: flex;
+    align-items: center
+}
+
+.nowrap {
+    white-space: nowrap
+}
+
+.ant-tooltip {
+    max-width: none !important
+}
+
+.ant-form-item-label > label.ant-form-item-required:before {
+    content: "" !important;
+    margin-right: 0 !important
+}
+
+.title {
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-block;
+    height: 34px;
+    line-height: 32px
+}
+
+/*# sourceMappingURL=main.e1d177af.chunk.css.map */
