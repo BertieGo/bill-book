@@ -8,6 +8,7 @@ export interface IPathItem {
     percent: number,
     barPercent: number,
     color: string,
+    _id: string,
 }
 
 export interface IChartProps {
@@ -24,6 +25,7 @@ export interface IBill {
     title: string,
     color: string,
     barPercent: number,
+    _id: string,
 }
 
 export interface IBillTableProps {
@@ -76,7 +78,7 @@ export interface IFilter {
 
 export interface IAddBillParam {
     amount: number,
-    time: Moment,
+    time: string,
     category: string
 }
 

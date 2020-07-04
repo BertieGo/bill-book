@@ -1,10 +1,16 @@
 import React from "react";
-import {IChartProps, IPathItem} from "../../declare";
-import cloneDeep from "lodash/cloneDeep";
-import {fixedFloat, floorFloat, getPercent} from "../../utils/math";
 import {Col, Row, Tooltip} from "antd";
+import cloneDeep from "lodash/cloneDeep";
+import isEqual from 'lodash/isEqual';
+
+import {IChartProps, IPathItem} from "../../declare";
+import {fixedFloat, floorFloat, getPercent} from "../../utils/math";
 
 export default class Bar extends React.Component<IChartProps, {}>{
+
+    shouldComponentUpdate(nextProps: Readonly<IChartProps>, nextState: Readonly<{}>, nextContext: any): boolean {
+        return !isEqual(nextProps.data, this.props.data);
+    }
 
     makeRowData = () => {
         const { data } = this.props;
@@ -40,7 +46,7 @@ export default class Bar extends React.Component<IChartProps, {}>{
 
     renderRowChart = (item: IPathItem) => {
         return (
-            <Row className="mb10">
+            <Row className="mb10" key={item._id}>
                 <Col span={4}>{ item.title }：</Col>
                 <Col span={8}>{ this.renderRow(item) }</Col>
             </Row>

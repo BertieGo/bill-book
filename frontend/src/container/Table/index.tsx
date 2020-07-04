@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Space, Tag } from 'antd';
+import { Table } from 'antd';
 import isEqual from 'lodash/isEqual';
 import moment from 'moment';
 import { IBillTableProps, IBill } from '../../declare';

@@ -1,20 +1,20 @@
 import React from 'react';
 import cloneDeep from 'lodash/cloneDeep';
 
-import { Spin, message } from 'antd';
+import { Spin } from 'antd';
 
 import BillTable from "./container/Table";
 import Filter from './container/Filter';
 import AddBillForm from './container/AddBillForm';
 import Charts  from "./container/Charts";
 import { BILL_TYPE } from './constants';
-import { IBill, IAppState, IFilter, IAddBillParam, IPathItem } from './declare';
+import { IBill, IAppState, IFilter, IAddBillParam } from './declare';
 
 import { getBillList, getBillCategories, addBillItem } from './request';
 import {getRandomColor} from "./utils/color";
 
 import './App.css';
-import { getPercent} from "./utils/math";
+import { getPercent } from "./utils/math";
 
 class App extends React.Component<{}, IAppState> {
 
@@ -62,7 +62,7 @@ class App extends React.Component<{}, IAppState> {
     }
 
     setBillCategories = () => {
-        this. setState({
+        this.setState({
             isFetchingBillCategories: true
         }, () => {
             getBillCategories().then((res) => {

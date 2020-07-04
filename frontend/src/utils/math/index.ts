@@ -3,7 +3,7 @@ export const fixedFloat = (float: number) => {
 }
 
 export const floorFloat = (float: number) => {
-    return Math.floor(float * 100) / 100;
+    return Math.floor(float * 10000) / 10000;
 }
 
 export const getPercent = (denominator: number, decimal: number) => {

@@ -1,7 +1,10 @@
 import React from "react";
+import {Tooltip} from "antd";
+import isEqual from "lodash/isEqual";
+
 import {IChartProps, IPathItem} from "../../declare";
 import {fixedFloat, floorFloat} from "../../utils/math";
-import {Tooltip} from "antd";
+
 
 const FULL_CIRCLE_RADIUS = 360;
 
@@ -17,6 +20,11 @@ export default class Pie extends React.Component<IChartProps, {}>{
         super(props);
         this.width = 200;
         this.height = 200;
+    }
+
+    shouldComponentUpdate(nextProps: Readonly<IChartProps>, nextState: Readonly<{}>, nextContext: any): boolean {
+        const { data } = this.props;
+        return !isEqual(nextProps.data, data);
     }
 
     renderPath = () => {
@@ -48,7 +56,7 @@ export default class Pie extends React.Component<IChartProps, {}>{
             const displayAmount = fixedFloat(item.amount);
 
             paths.push(
-                <Tooltip title={(<div className="nowrap">{`类型：${item.title} 金额: ${displayAmount} 占比：${displayPercent}`}</div>)}>
+                <Tooltip key={item._id} title={(<div className="nowrap">{`类型：${item.title} 金额: ${displayAmount} 占比：${displayPercent}`}</div>)}>
                     <path d={`M${sx} ${sy} A ${radius} ${radius}, 0, ${largeArcFlag}, 1, ${ex} ${ey} L ${cx} ${cy} Z`} fill={item.color}/>
                 </Tooltip>
             )

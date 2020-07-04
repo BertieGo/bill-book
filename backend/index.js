@@ -107,7 +107,7 @@ MongoClient.connect(url, {useNewUrlParser: true}, function (err, db) {
 });
 
 app.get('/api/bill/categories', function (req, res) {
-    database.collection(TABLE_BILL_CATEGORIES).aggregate([{$project: {_id: 0}}]).toArray((err, result) => {
+    database.collection(TABLE_BILL_CATEGORIES).aggregate([{$project: {amount: 0}}]).toArray((err, result) => {
         if (err) {
             res.send((responseMiddleware(RESPONSE_CODE.FAIL, err)));
             throw err;
@@ -156,7 +156,6 @@ app.get('/api/bill', function (req, res) {
         },
         {
             $project: {
-                _id: 0,
                 title: '$detail.name',
                 amount: '$amount',
                 type: '$type',
