@@ -11,6 +11,7 @@ services:
       - webapp-network
   backend:
     image: x-mind/backend
+    restart: always
     depends_on:
       - database
     ports:
@@ -19,6 +20,7 @@ services:
       - webapp-network
   frontend:
     image: x-mind/frontend
+    restart: always
     depends_on:
       - backend
       - database
