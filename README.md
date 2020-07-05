@@ -19,7 +19,7 @@
 > 测试机版本参考  
 > MacOS Mojave 10.14.6，Docker 19.03.5，Docker-Compose 1.24.1  
 > Ubuntu 16.04.1 LTS, Docker 19.03.8, Docker-Compose 1.18.0  
-> 确认端口 4000 未被占用
+ > 确认端口 4000、8800、27017 未被占用
 
 假如已经安装了 docker 和 docker-compose，那么可以直接运行根目录下的 `` docker-start.sh `` 完成项目的启动，而不需要去关注
  Node、MongoDB 环境的搭建。
