@@ -24,7 +24,7 @@
 假如已经安装了 docker 和 docker-compose，那么可以直接运行根目录下的 `` docker-start.sh `` 完成项目的启动，而不需要去关注
  Node、MongoDB 环境的搭建。
  
- 当 docker-compose 将所有容器启动之后，就可以通过访问 http://localhost:4000/x-mind-home-work 的方式来访问。
+ 当 docker-compose 将所有容器启动之后(可能会有短暂延迟)，就可以通过访问 http://localhost:4000/x-mind-home-work 的方式来访问。
  
  - #### No Docker
  > 测试机版本参考  
@@ -32,7 +32,7 @@
  > 确认端口 3000、8800、27017 未被占用
 
 - 首先需要安装并启动 MongoDB，默认端口为：`` 27017``。
-- 运行根目录下 `` no-docker-starter.sh ``。
+- 运行根目录下 `` frontend-starter.sh `` 与 ``backend-starter.sh``。
 
 访问方式：http://localhost:3000
 
