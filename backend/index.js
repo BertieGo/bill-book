@@ -101,9 +101,15 @@ function initTables() {
 MongoClient.connect(url, {useNewUrlParser: true}, function (err, db) {
     if (err) throw err;
     database = db.db("bill");
-    // deleteCollection('bill_categories')
-    // deleteCollection('bill_list')
-    initTables();
+
+    database.collection(TABLE_BILL_CATEGORIES).find({}).toArray((err, res) => {
+        if (err) {
+            throw err;
+        }
+        if (!res || res.length === 0) {
+            initTables();
+        }
+    })
 });
 
 app.get('/api/bill/categories', function (req, res) {
