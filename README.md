@@ -38,8 +38,11 @@ Hey, 你好，一直非常喜欢 XMind，也非常热衷于前端技术，希望
  前端：
  后端:
 
+前端技术选型：
+![images](https://github.com/BertieGo/bill-book/blob/master/mind-images/frontend-tech-pick.png?raw=true)
 
 目录结构：
+
 ```
 project
 │   README.md
