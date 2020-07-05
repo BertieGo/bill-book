@@ -96,3 +96,9 @@ export interface IChartsProps {
     categoryBillData: IBill[],
     typeBillData: IBill[]
 }
+
+export interface IHSLColor {
+    hue: number,
+    saturation: number,
+    luminance: number,
+}

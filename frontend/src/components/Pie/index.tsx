@@ -47,6 +47,11 @@ export default class Pie extends React.Component<IChartProps, {}>{
 
             const currentRadius = currentPercent * FULL_CIRCLE_RADIUS;
 
+            // 在已知了半径、圆心、弧度，那么可以根据下面公式求得该弧度上的点
+            //  x = Cx + r * Math.cos( (d+90) * Math.PI / 180 );
+            //  y = Cy + r * Math.sin( (d+90) * Math.PI / 180 );
+            // @refer: https://stackoverflow.com/questions/35679611/calculating-a-location-on-a-circle-given-an-angle-of-rotation
+
             const ex = floorFloat(cx + radius * Math.cos( currentRadius * Math.PI / HALF_CIRCLE_RADIUS));
             const ey = floorFloat(cy + radius * Math.sin( currentRadius * Math.PI / HALF_CIRCLE_RADIUS));
 

@@ -1,44 +1,71 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 工具选型：
+![images](https://github.com/BertieGo/bill-book/blob/master/mind-images/frontend-tech-pick.png?raw=true)
 
-## Available Scripts
+### 目录结构：  
+```
+./src
+├── App.css
+├── App.tsx // 业务容器
+├── components // 公用组件文件夹
+│   ├── Bar // 条形图
+│   │   ├── Bar.test.tsx
+│   │   ├── __snapshots__
+│   │   │   └── Bar.test.tsx.snap
+│   │   └── index.tsx
+│   ├── CategorySelector // 类型选择器，用于选取账单种类
+│   │   ├── Category.test.tsx
+│   │   ├── __snapshots__
+│   │   │   └── Category.test.tsx.snap
+│   │   └── index.tsx
+│   └── Pie // 饼状图，采用 svg 的 path 作图
+│       ├── Pie.test.tsx
+│       ├── __snapshots__
+│       │   └── Pie.test.tsx.snap
+│       └── index.tsx
+├── config // 环境变量
+│   └── env.ts
+├── constants.ts // 全局常量
+├── container // 业务组件
+│   ├── AddBillForm // 添加账单
+│   │   └── index.tsx
+│   ├── Charts // 图标栏
+│   │   └── index.tsx
+│   ├── Filter // 筛选栏
+│   │   └── index.tsx
+│   ├── Table // 表格
+│   │   └── index.tsx
+│   └── Title // 页面顶部 Title
+│       └── index.tsx
+├── declare.ts // ts 接口和类型
+├── index.css
+├── index.tsx
+├── react-app-env.d.ts
+├── request // ajax 请求列表
+│   ├── index.ts
+│   └── request.test.tsx
+├── serviceWorker.ts
+├── setupTests.ts
+└── utils // 工具集
+    ├── color // 随机生成颜色
+    │   └── index.ts
+    ├── math // 包括小数点后 x 位截取功能
+    │   └── index.ts
+    ├── request // 提供公用的 get 和 post 方法用于请求 ajax
+    │   └── index.ts
+    └── test // Jest 为 react-create-app 所做的的 react component snapshot test polyfill
+        └── polyfill.ts
+```
 
-In the project directory, you can run:
+### Consider  
 
-### `yarn start`
+在作业中有需要展示收支总额和各类型支出统计的功能，想到使用图表📈的形式去展示，采取两种的展示方式,
+- 条形图，用于排序展示会比较直观，使用的是 `` div ``  去实现。
+- 饼图, 用于展示占比。 饼图使用 ``svg path`` 内的弧形 `` A `` API 来实现的。首先计算每个类型的占比，然后通过占比去求得每一块饼的角度，然后已知圆心、角度、半径的前提下，
+可以求得对应的饼的路径。
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+同时，图表内的颜色为随机生成所有色域内的值，那么可能会生成接近白 / 黑的色值，或者生成连续的两个色值很接近的颜色，
+这两种情况都不利于图表的展示。所以通过 [Generate Random Color distinguishable to Humans](https://stackoverflow.com/a/31817723/13804371) 内回答的提示，
+使用 ``HSL`` 描述颜色的方式去区分每一次生成的颜色是否跟之前的颜色有足够的不同且不接近白色或黑色。
+同时在自己的 
+[版本](https://github.com/BertieGo/bill-book/blob/master/frontend/src/utils/color/index.ts) 内去做了精简实现。
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

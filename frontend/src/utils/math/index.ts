@@ -9,3 +9,7 @@ export const floorFloat = (float: number) => {
 export const getPercent = (denominator: number, decimal: number) => {
     return fixedFloat((denominator / decimal) * 100);
 }
+
+export const getRandomNumberByRang = (min: number, max: number) => {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}

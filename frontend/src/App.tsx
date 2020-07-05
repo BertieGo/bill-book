@@ -116,11 +116,12 @@ class App extends React.Component<{}, IAppState> {
         let result = this.combineBillItem(copy, 'type');
 
         const sum = this.getSum(result);
+        const colorGenerator = getRandomColor();
 
         result.forEach((item: IBill) => {
             item.percent = getPercent(item.amount, sum);
             item.title = BILL_TYPE[item.type];
-            item.color = getRandomColor();
+            item.color = colorGenerator();
         })
 
         if (result.length === 1) {
@@ -144,9 +145,11 @@ class App extends React.Component<{}, IAppState> {
 
         const sum = this.getSum(result);
 
+        const colorGenerator = getRandomColor();
+
         result.forEach((item: IBill) => {
             item.percent = getPercent(item.amount, sum);
-            item.color = getRandomColor()
+            item.color = colorGenerator()
         })
 
         return result;
