@@ -112,7 +112,7 @@
  ### 后端
  
  #### 工具选型：
-  ![images](https://github.com/BertieGo/bill-book/blob/master/mind-images/backend-tech-pick.png?raw=true)
+  ![images](https://github.com/BertieGo/bill-book/blob/master/mind-images/backend-tech-pick.jpg?raw=true)
   
  #### 目录结构：
  ```
