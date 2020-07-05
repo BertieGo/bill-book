@@ -7,6 +7,7 @@ import BillTable from "./container/Table";
 import Filter from './container/Filter';
 import AddBillForm from './container/AddBillForm';
 import Charts  from "./container/Charts";
+import Title from "./container/Title";
 import { BILL_TYPE } from './constants';
 import { IBill, IAppState, IFilter, IAddBillParam } from './declare';
 
@@ -155,6 +156,7 @@ class App extends React.Component<{}, IAppState> {
         const { isFetchingBill, isFetchingBillCategories, billList, billCategories } = this.state;
         return (
             <div className="container">
+                <Title/>
                 <Filter
                     onMonthChange={this.onMonthChange}
                     categories={billCategories}

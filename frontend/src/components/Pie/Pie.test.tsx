@@ -1,5 +1,5 @@
 import React from 'react';
-import Bar from './index';
+import Pie from './index';
 import renderer from 'react-test-renderer';
 import createReactAppJestPolyfill from '../../utils/test/polyfill';
 
@@ -18,7 +18,7 @@ test('COMPONENT-TEST: Pie', () => {
     }];
 
     const tree = renderer
-        .create(<Bar data={data as any[]}/>)
+        .create(<Pie data={data as any[]}/>)
         .toJSON();
     expect(tree).toMatchSnapshot();
 });

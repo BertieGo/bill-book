@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`COMPONENT-TEST: Bar 1`] = `
+<div>
+  <div
+    className="ant-row mb10"
+    style={Object {}}
+  >
+    <div
+      className="ant-col ant-col-4"
+      style={Object {}}
+    >
+      支出
+      ：
+    </div>
+    <div
+      className="ant-col ant-col-8"
+      style={Object {}}
+    >
+      <div
+        className="ant-row"
+        style={Object {}}
+      >
+        <div
+          className="ant-col ant-col-20"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          style={Object {}}
+        >
+          <div
+            className="row-bar"
+            style={
+              Object {
+                "backgroundColor": "#72a935",
+                "width": "100%",
+              }
+            }
+          />
+        </div>
+        <div
+          className="ant-col ant-col-4"
+          style={Object {}}
+        >
+          <span
+            className="ml20"
+          >
+            2672740
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`COMPONENT-TEST: Pie 1`] = `
+<div>
+  <div
+    className="ant-row mb10"
+    style={Object {}}
+  >
+    <div
+      className="ant-col ant-col-4"
+      style={Object {}}
+    >
+      支出
+      ：
+    </div>
+    <div
+      className="ant-col ant-col-8"
+      style={Object {}}
+    >
+      <div
+        className="ant-row"
+        style={Object {}}
+      >
+        <div
+          className="ant-col ant-col-20"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          style={Object {}}
+        >
+          <div
+            className="row-bar"
+            style={
+              Object {
+                "backgroundColor": "#72a935",
+                "width": "100%",
+              }
+            }
+          />
+        </div>
+        <div
+          className="ant-col ant-col-4"
+          style={Object {}}
+        >
+          <span
+            className="ml20"
+          >
+            2672740
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Link renders correctly 1`] = `
+<div>
+  <div
+    className="ant-row mb10"
+    style={Object {}}
+  >
+    <div
+      className="ant-col ant-col-4"
+      style={Object {}}
+    >
+      支出
+      ：
+    </div>
+    <div
+      className="ant-col ant-col-8"
+      style={Object {}}
+    >
+      <div
+        className="ant-row"
+        style={Object {}}
+      >
+        <div
+          className="ant-col ant-col-20"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          style={Object {}}
+        >
+          <div
+            className="row-bar"
+            style={
+              Object {
+                "backgroundColor": "#72a935",
+                "width": "100%",
+              }
+            }
+          />
+        </div>
+        <div
+          className="ant-col ant-col-4"
+          style={Object {}}
+        >
+          <span
+            className="ml20"
+          >
+            2672740
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
